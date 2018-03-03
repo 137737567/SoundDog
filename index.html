@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>音乐播放</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#top{
+				background-color: black;
+				height: 60px;
+				padding-left: 35px;
+				overflow: hidden;
+			}
+			#top a{
+				text-decoration: none;
+				color: white;
+				font-weight:600;
+				font-size: 26px;
+				margin: 50px;
+				line-height: 60px;
+				vertical-align: top;
+			}
+			#bigbox{
+				background-image: url(img/bj1.jpg);
+				background-size:cover;
+				height: 700px;
+			}
+			#leftbox{
+				margin-left: 40px;
+				padding-top: 45px;
+				widows: 312px;
+			}
+			#name{
+				font-weight:600;
+				font-size: 22px;
+			}
+			#control span{
+				cursor: pointer;
+				float: left;
+			}
+			#control{
+				margin-left: 6px;
+			}
+			#control0{
+				margin-left: 4px;
+    			margin-top: -24px;
+				margin-bottom: -3px;
+			}
+		</style>
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//点击下一首
+				$("#after").click(function(){		
+					$("#name").html("secretbase 君がくれたもの-茅野愛衣");
+					alert(next());
+				})
+				
+				//点击上一首
+				$("#before").click(function(){
+					$("#name").html("ひまわりの約束-秦基博");
+					alert(before());
+				})
+				
+				
+				//点击停止
+				$("#stop").click(function(){
+					var audio =document.getElementById("audio");
+					
+				})
+				
+				 //下一首方法
+				function next(){
+					var pic=document.getElementById("pic")
+					pic.src="img/secretbase 君がくれたもの-茅野愛衣.jpg"
+					var audio =document.getElementById("audio");			
+					audio.src="music/secretbase 君がくれたもの-茅野愛衣.mp3";
+					audio.play();
+					
+					if(audio != null && audio.canPlayType())
+					{
+					}
+				}
+				
+
+				 //上一首方法
+				function before(){
+					var pic=document.getElementById("pic")
+					pic.src="img/ひまわりの約束-秦基博.jpg"
+					var audio =document.getElementById("audio");			
+					audio.src="music/ひまわりの約束-秦基博.mp3";
+					audio.play();
+					if(audio != null && audio.canPlayType())
+					{
+					}
+				}
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="top">
+			<img src="img/logo0.png"/><img src="img/logo1.jpg"/>
+			<a href="">首页</a><a href="">歌手</a><a href="">榜单</a><input id="searchBar" type="text" placeholder="请输入歌名或歌手"/>
+		</div>
+		<div id="bigbox">
+			<div id="leftbox">				
+				<!--专辑封面-->
+				<div id="cover">
+					<img id="pic" width="310px" height="310" src="img/ひまわりの約束-秦基博.jpg"/>
+				</div>
+				<!--歌曲名-->
+				<span id="name">ひまわりの約束-秦基博</span>
+				<!--控制器-->
+				<div id="control0">
+					<br/><br/><audio id="audio" src="music/ひまわりの約束-秦基博.mp3" autoplay="autoplay" controls="controls" loop="-1">
+			 		
+			 		</audio>
+				</div>
+				
+				<div id="control">
+					<span id="skin"><img src="img/con0.jpg"/></span> <span id="loop"><img src="img/con01.png"/></span> <span id="before"><img src="img/con02.png"/></span> <span id="stop"><img src="img/con03.png"/></span> <span id="after"><img src="img/con04.png"/></span> <span id="download"><img src="img/con05.png"/></span>  <span id="collect"><img src="img/con06.jpg"/></span>
+					
+				</div>
+ 	
+			</div>
+		</div>
+	</body>
+</html>
